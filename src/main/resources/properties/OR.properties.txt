@@ -1,0 +1,43 @@
+#Admin Login Test
+UsernameInput_css=.form-control.input-height.col-12
+PasswordInput_Xpath=//*[@id=\"Password\"]
+LoginBtn_Xpath=/html/body/div[1]/div/form/div[2]/div/div[5]/div/button
+
+#check presence of Dashboard menu
+DashboardBtn_Xpath=(//div[@class='col menu-left-text-styling'])[1]
+
+Availablehours_Xpath=/html/body/div[7]/div/div[1]/div[1]/div/h5
+
+#Click on view task
+ViewTaskLink_Xpath=//div[@class='wrapper3']//li[2]//div[1]//div[2]//a[1]
+  #VIEWTASK SCREEN
+#Click on the "MINEWARE - Trackplan" Project
+MINEWARE - trackplan=//*[@id="TaskViewgridContainer"]/div/div[6]/div/table/tbody/tr[4]/td[2]
+#clickActivity Dropdown
+ActivityDropdown_Xpath=//*[@id="ActivitySelectBoxContainer_LogTimeTaskUserView"]/div[1]/div/div[1]/input
+#click Testing value
+Testingvalue_Xpath=//*[@id="dx-66a953d6-63d5-289d-366e-581a976bf8c8"]/div[1]/div/div[1]/div[2]/div/div
+#Click calendar icon to open up calendar
+CalenderIcon_Xpath=//*[@id="workdateBoxContainer_LogTimeTaskUserView"]/div[1]/div/div[2]/div[2]/div
+#Click current date
+CalendarDate_Xpath=/html/body/div[13]/div/div/div/div[2]/div/div/table/tbody/tr[4]/td[3]
+#Click from Time
+FromTime_Xpath=//*[@id="StartTimeBoxContainer_LogTimeTaskUserView"]/div/div/div[1]/input
+#Enter Hours
+TotalHours_Xpath=//*[@id="TotalTimeBoxContainer_LogTimeTaskUserView"]/div[1]/div[1]/input
+#Enter comment
+CommentTextbox_Xpath=//*[@id="CommentsBoxContainer_LogTimeTaskUserView"]/div/div[1]/textarea
+#Click Save
+SaveButton_Class=//div[@id='SaveButtonContainer_LogTimeTaskUserView']//div[@class='dx-button-content']
+
+
+#USERS SCREEN
+
+Users_Xpath=//div[@class='d-flex flex-column text-muted']//a[normalize-space()='Users']
+firstname_xpath=//*[@id="User_Name"]/div/div[1]/input
+lastname=//*[@id="4587_669_4877_16"]/div/div[1]/input
+postcode=//*[@id="User_Password"]/div/div[1]/input
+
+
+
+

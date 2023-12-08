@@ -1,0 +1,5 @@
+# Config.properties
+browser=chrome
+implicit.wait=10
+testsiteurl=https://trackplantest.mineware.co.za
+
