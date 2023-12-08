@@ -1,66 +1,37 @@
 package TestCases;
 
 import BasePage.TestBase;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class ViewTaskTest extends TestBase {
 
-
     @Test
-    public void ViewTasks() throws InterruptedException {
+    public void ViewTasks() throws Exception {
 
-        try {
-            Thread.sleep(10000);
-            driver.findElement(By.xpath(OR.getProperty("ViewTaskLink_Xpath"))).click();
-
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-
-        }
-
-            // Adding a delay after clicking "ViewTaskLink" (replace with WebDriverWait for better practices)
-           Thread.sleep(3000);
-        String xpath = "//*[@id=\"TaskViewgridContainer\"]/div/div[6]/div/table/tbody/tr[4]/td[2]";
-        System.out.println("XPath: " + xpath);
-        driver.findElement(By.xpath(xpath)).click();
-
-        Thread.sleep(3000);
-        //WebElement inputField = driver.findElement(By.xpath(OR.getProperty("ActivityDropdown_Xpath")));
-       // inputField.clear();
-       // Thread.sleep(3000);
-       // inputField.sendKeys("Testing");
-       Thread.sleep(3000);
-      //  driver.findElement(By.xpath(OR.getProperty("Testingvalue_Xpath"))).click();
-
-        WebElement calendar = driver.findElement(By.xpath(OR.getProperty("CalenderIcon_Xpath")));
-        calendar.click();
-
-        // Wait for the datepicker to appear
-       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-       // WebElement datepicker = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("CalenderIcon_Xpath")));
-
-        // Select the desired date in the datepicker
-       // WebElement desiredDate = datepicker.findElement(By.xpath("CalendarDate_Xpath"));
-      //  desiredDate.click();
-
-        Thread.sleep(3000);
-        String dateInputXpath = "//input[@role='combobox' and @class='dx-texteditor-input' and @aria-activedescendant][@aria-controls]";
-        WebElement dateInput = driver.findElement(By.xpath(dateInputXpath));
-        dateInput.click();
-
-        driver.findElement(By.xpath(OR.getProperty("FromTime_Xpath"))).click();
-
-       WebElement InputHours = driver.findElement(By.xpath(OR.getProperty("TotalHours_Xpath")));
-       InputHours.clear();
-       InputHours.sendKeys("1");
-       Thread.sleep(3000);
-       driver.findElement(By.xpath(OR.getProperty("CommentTextbox_Xpath"))).sendKeys("Just testing");
         Thread.sleep(10000);
-       driver.findElement(By.xpath(OR.getProperty("SaveButton_Class"))).click();
+        clickButton("//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'View Tasks')]");
+        //driver.navigate().to("https://trackplantest.mineware.co.za/Tasks/TaskUserView");
+        Thread.sleep(3000);
+       // MoveOnElement("//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Projects')]");
 
+        clickButton("//*[@id='TaskViewgridContainer']/div/div[6]/div/table/tbody/tr[4]/td[2]"); //clicking project name
+       // Thread.sleep(3000);
+        clickButton("//*[@id=\"ActivitySelectBoxContainer_LogTimeTaskUserView\"]/div[1]/div/div[1]/input"); //click on activity dropdown
+        Thread.sleep(3000);
+        clickButton("//div[contains(text(),'Testing')]");
+        Thread.sleep(1000);
+       clickButton("//*[@id=\"workdateBoxContainer_LogTimeTaskUserView\"]/div[1]/div/div[2]/div[2]/div");
+       Thread.sleep(3000);
+       clickButton("/html/body/div[13]/div/div/div/div[2]/div/div/table/tbody/tr[4]/td[3]"); //click current date
+        Thread.sleep(3000);
+       clickButton("//*[@id=\"StartTimeBoxContainer_LogTimeTaskUserView\"]/div/div/div[1]/input"); //Click fromDate
+        Thread.sleep(3000);
+        enterText("//*[@id=\"TotalTimeBoxContainer_LogTimeTaskUserView\"]/div[1]/div[1]/input" , "1"); //Enter hours
+        Thread.sleep(1000);
+        enterText(" //*[@id=\"CommentsBoxContainer_LogTimeTaskUserView\"]/div/div[1]/textarea" , "tt d67jkh");
+        Thread.sleep(3000);
+        clickButton("//div[@id='SaveButtonContainer_LogTimeTaskUserView']//div[@class='dx-button-content']");  //click save button
 
+        pressRefresh();
     }
-
 }

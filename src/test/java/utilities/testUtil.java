@@ -51,7 +51,7 @@ public class testUtil extends TestBase {
 
             table = new Hashtable<String,String>();
 
-            for (int colNum = 0; colNum < cols - 3; colNum++) {
+            for (int colNum = 0; colNum < cols; colNum++) {
 
                 // data[0][0]
                 table.put(excel.getCellData(sheetName, colNum, 1), excel.getCellData(sheetName, colNum, rowNum));

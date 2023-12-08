@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Data Driven Basics" verbose="1" parallel="tests" thread-count="5">
+
+
+<listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="extentlisteners.Extentlisteners"/>
+
+    </listeners>
+    <test name="LoginTest">
+        <classes>
+            <class name="TestCases.LoginTest"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+
+    <test name="ViewTaskTest">
+        <classes>
+            <class name="TestCases.ViewTaskTest"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+    <test name="TimeSheetTest">
+        <classes>
+
+            <class name="TestCases.TimeSheetTest"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+    <test name="Projects">
+        <classes>
+
+            <class name="TestCases.Projects"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+    <test name="LogOut">
+        <classes>
+            <class name="TestCases.LogOut"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+</suite>

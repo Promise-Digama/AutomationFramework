@@ -117,6 +117,13 @@
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
         <dependency>
@@ -137,6 +144,12 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml-schemas</artifactId>
             <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.14.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- POI JARS ENDS -->

@@ -1,71 +1,37 @@
 package TestCases;
 
 import BasePage.TestBase;
-import org.openqa.selenium.By;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utilities.testUtil;
 
 //import static sun.security.util.KnownOIDs.Data;
 
 public class UsersTest extends TestBase {
 
-    @Test  (dataProviderClass = testUtil.class, dataProvider = "dp")
-    public void user (String firstname, String lastname, String postcode) throws InterruptedException {
+    // https://trackplantest.mineware.co.za/Users/List
 
-        //if(runmode.equalsIgnoreCase("Y")) {
+    @Test
+    public void user() throws Exception {
 
-         // throw new SkipException("Skipping the test case as the Run mode for data set is NO");
-        Thread.sleep(10000);
-        driver.findElement(By.xpath(OR.getProperty("Users_Xpath"))).click();
-        System.out.println("//div[@class='d-flex flex-column text-muted']//a[normalize-space()='Users']");
+       // Thread.sleep(3000);
+      //  driver.navigate().to("https://trackplantest.mineware.co.za/Users/List");
+
+       Thread.sleep(40000);
+        clickButton("//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Projects')]");
+       // clickButton("//*[@id='devextreme5']"); //click userButton /div[@class='d-flex flex-column text-muted']//a[normalize-space()='Projects']
+       // clickButton("/html/body/div[5]/div/div/div[2]/div[3]/a");
         Thread.sleep(3000);
-       driver.findElement(By.xpath(OR.getProperty(""))).sendKeys(firstname);
+      /*  clickButton("//*[@id=\"ActivitySelectBoxContainer_LogTimeTaskUserView\"]/div[1]/div/div[1]/input"); //click on activity dropdown
         Thread.sleep(3000);
-       driver.findElement(By.xpath(OR.getProperty(""))).sendKeys(lastname);
-        Thread.sleep(3000);
-       driver.findElement(By.xpath(OR.getProperty(""))).sendKeys(postcode);
-       Thread.sleep(3000);
-      // Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        clickButton("//div[contains(text(),'Testing')]");
+        Thread.sleep(1000);
+        clickButton("//*[@id=\"workdateBoxContainer_LogTimeTaskUserView\"]/div[1]/div/div[2]/div[2]/div");
+        Thread.sleep(3000); */
 
     }
 
-    @DataProvider (name = "dp")// This method should provide data for your test
-    public Object[][] data() {
-
-
-        return new Object[][] {
-
-                {"Testing", "tester", "Mineware", "User", "Y"},
-                {"Jane", "Smith", "Mineware", "Error", "N"},
-                {"P", "D", "Mineware", "Error", "N"},
-                {"Leago", "Digama", "Mineware", "Error", "N"},
-
-        };
-
-
-    }
 }
 
-            //public void getData (String firstname, String lastname, String postcode, String alerttext) throws InterruptedException {
 
-                // You need to return a 2D array of test data
-            // For example, you can read data from a file or a database here
-            // Thread.sleep(3000);
-
-
-        /*click("addCustBtn_CSS");
-        type("firstname_CSS",data.get("firstname"));
-        type("lastname_XPATH",data.get("lastname"));
-        type("postcode_CSS",data.get("postcode"));
-        click("addbtn_CSS");
-        Thread.sleep(2000);
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-
-        Assert.assertTrue(alert.getText().contains(data.get("alerttext")));
-        alert.accept(); */
-
-            //   Thread.sleep(2000);
 
 
 
