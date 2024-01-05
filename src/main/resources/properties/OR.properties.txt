@@ -3,9 +3,20 @@ UsernameInput_css=.form-control.input-height.col-12
 PasswordInput_Xpath=//*[@id=\"Password\"]
 LoginBtn_Xpath=/html/body/div[1]/div/form/div[2]/div/div[5]/div/button
 
+<<<<<<< HEAD
 #Click on view task
 ViewTaskLink_Xpath=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'View Tasks')]
 
+=======
+#check presence of Dashboard menu
+DashboardBtn_Xpath=(//div[@class='col menu-left-text-styling'])[1]
+
+Availablehours_Xpath=/html/body/div[7]/div/div[1]/div[1]/div/h5
+
+#Click on view task
+ViewTaskLink_Xpath=//div[@class='wrapper3']//li[2]//div[1]//div[2]//a[1]
+  #VIEWTASK SCREEN
+>>>>>>> origin/master
 #Click on the "MINEWARE - Trackplan" Project
 MINEWARE - trackplan=//*[@id="TaskViewgridContainer"]/div/div[6]/div/table/tbody/tr[4]/td[2]
 #clickActivity Dropdown
@@ -26,6 +37,7 @@ CommentTextbox_Xpath=//*[@id="CommentsBoxContainer_LogTimeTaskUserView"]/div/div
 SaveButton_Class=//div[@id='SaveButtonContainer_LogTimeTaskUserView']//div[@class='dx-button-content']
 
 
+<<<<<<< HEAD
 #TIME SHEET SCREEN
 TimesheetMenu_Xpath=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Time Sheet')]
 UserCalendar_Xpath=//*[@id="FromDateWrapper"]/div[1]/div/div[2]/div[2]/div/div
@@ -44,6 +56,14 @@ BookLeaveMenu_Xpath=//div[contains(@class,'d-flex flex-column text-muted')]//a[c
 
 
 
+=======
+#USERS SCREEN
+
+Users_Xpath=//div[@class='d-flex flex-column text-muted']//a[normalize-space()='Users']
+firstname_xpath=//*[@id="User_Name"]/div/div[1]/input
+lastname=//*[@id="4587_669_4877_16"]/div/div[1]/input
+postcode=//*[@id="User_Password"]/div/div[1]/input
+>>>>>>> origin/master
 
 
 
