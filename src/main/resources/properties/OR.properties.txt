@@ -1,56 +1,58 @@
-#Admin Login Test
-UsernameInput_css=.form-control.input-height.col-12
-PasswordInput_Xpath=//*[@id=\"Password\"]
-LoginBtn_Xpath=/html/body/div[1]/div/form/div[2]/div/div[5]/div/button
+#LOGIN
+UsernameInput=//input[@id='Email']
+PasswordInput=//input[@id='Password']
+LoginBtn=//button[contains(text(),'LOGIN')]
 
-<<<<<<< HEAD
-#Click on view task
-ViewTaskLink_Xpath=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'View Tasks')]
-
-=======
-#check presence of Dashboard menu
-DashboardBtn_Xpath=(//div[@class='col menu-left-text-styling'])[1]
-
-Availablehours_Xpath=/html/body/div[7]/div/div[1]/div[1]/div/h5
-
-#Click on view task
-ViewTaskLink_Xpath=//div[@class='wrapper3']//li[2]//div[1]//div[2]//a[1]
-  #VIEWTASK SCREEN
->>>>>>> origin/master
-#Click on the "MINEWARE - Trackplan" Project
-MINEWARE - trackplan=//*[@id="TaskViewgridContainer"]/div/div[6]/div/table/tbody/tr[4]/td[2]
-#clickActivity Dropdown
-ActivityDropdown_Xpath=//*[@id="ActivitySelectBoxContainer_LogTimeTaskUserView"]/div[1]/div/div[1]/input
-#click Testing value
-Testingvalue_Xpath=//*[@id="dx-66a953d6-63d5-289d-366e-581a976bf8c8"]/div[1]/div/div[1]/div[2]/div/div
-#Click calendar icon to open up calendar
-CalenderIcon_Xpath=//*[@id="workdateBoxContainer_LogTimeTaskUserView"]/div[1]/div/div[2]/div[2]/div
+#VIEWTASKTEST
+ViewTaskMenu=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'View Tasks')]
+ProjectName=//*[@id='TaskViewgridContainer']/div/div[6]/div/table/tbody/tr[4]/td[2]
+ActivityDropdown=//*[@id="ActivitySelectBoxContainer_LogTimeTaskUserView"]/div[1]/div/div[1]/input
+Testingvalue=//div[contains(text(),'Testing')]
+CalenderIcon=//*[@id="workdateBoxContainer_LogTimeTaskUserView"]/div[1]/div/div[2]/div[2]/div
 #Click current date
-CalendarDate_Xpath=/html/body/div[13]/div/div/div/div[2]/div/div/table/tbody/tr[4]/td[3]
+CalendarDate=/html/body/div[13]/div/div/div/div[2]/div/div/table/tbody/tr[4]/td[3]
 #Click from Time
-FromTime_Xpath=//*[@id="StartTimeBoxContainer_LogTimeTaskUserView"]/div/div/div[1]/input
+FromDate=//*[@id="StartTimeBoxContainer_LogTimeTaskUserView"]/div/div/div[1]/input
 #Enter Hours
-TotalHours_Xpath=//*[@id="TotalTimeBoxContainer_LogTimeTaskUserView"]/div[1]/div[1]/input
-#Enter comment
-CommentTextbox_Xpath=//*[@id="CommentsBoxContainer_LogTimeTaskUserView"]/div/div[1]/textarea
-#Click Save
-SaveButton_Class=//div[@id='SaveButtonContainer_LogTimeTaskUserView']//div[@class='dx-button-content']
+TotalHours=//*[@id="TotalTimeBoxContainer_LogTimeTaskUserView"]/div[1]/div[1]/input
+CommentField=//*[@id="CommentsBoxContainer_LogTimeTaskUserView"]/div/div[1]/textarea
+SaveButton=//div[@id='SaveButtonContainer_LogTimeTaskUserView']//div[@class='dx-button-content']
 
-
-<<<<<<< HEAD
 #TIME SHEET SCREEN
-TimesheetMenu_Xpath=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Time Sheet')]
-UserCalendar_Xpath=//*[@id="FromDateWrapper"]/div[1]/div/div[2]/div[2]/div/div
-DateInput_Xpath=//*[@id="dx-cb57751d-5486-2e95-a5dd-dea954c72bd5"]/div/div[2]/div/div[1]/table/tbody/tr[1]/td[5]
+TimesheetMenu=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Time Sheet')]
+UserCalendar=//*[@id="UserTimeSheet"]/div/div[6]/div[1]/div/div[1]/div/table/tbody/tr[2]/td[2]/div/a[2]/i
+DateInput=/html/body/div[13]/div/div/div[3]/div/div[2]/div[2]/div/div
 UpdateCalender_Xpath=//*[@id="devextreme4"]/div
 
-#Bookleave Screen
-BookLeaveMenu_Xpath=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Book Leave')]
+#PROJECT SCREEN
+ProjectMenu=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Projects')]
+NewProjectButton=//*[@id="btnProjectTask"]/div/i
+Title=//input[@name='Title']
+DropdownClient=//*[@id="addNewProjectForm"]/div/div/div/div[2]/div/div/div/div/div[1]/div/div[2]/div[2]
+Client=//div[contains(text(),'Goldfields')]
+DropdownProjectLeader=//*[@id="addNewProjectForm"]/div/div/div/div[3]/div/div/div/div/div[1]/div/div[2]/div[2]
+ProjectLeader=//div[contains(text(),'Allan Robertson')]
+DropdownProjectScope=//*[@id="addNewProjectForm"]/div/div/div/div[4]/div/div/div/div/div/div/div[2]/div[2]
+ProjectScope=//div[contains(text(),'Retainer')]
+ClickCalendarIcon=//*[@id="addNewProjectForm"]/div/div/div/div[5]/div/div/div/div/div/div/div[2]/div[2]
+StartDate=//td[@aria-label='Thursday, January 11, 2024']
+CalendarIcon=//*[@id="addNewProjectForm"]/div/div/div/div[6]/div/div/div/div/div/div/div[2]/div[2]
+EndDate=(//td[@data-value='2024/01/12'])[2]
+AddProjectbtn=//div[@aria-label='Add Project']
 
+#REPORTSTEST
+ReportMenu=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Reports')]
+ReportSubmitBtn=//*[@id="propertiesPanel"]/div[1]/div/div[1]/div[2]/div[2]/div[3]/div/span
 
+#CLIENTS
+ClientMenu=//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Book Vehicle')]
 
+#BOOKLEAVE
+Description=//input[@class='dx-texteditor-input' and @type='text' and @autocomplete='off' and @spellcheck='false' and @maxlength='45' and @tabindex='0' and @role='textbox' and @aria-required='true']
 
-
+DoneBtn=/html/body/div[13]/div/div[2]/div/div[3]/div[1]/div/div
+#LOGOUT
+logOutbtn=//a[text()='Logout']
 
 
 

@@ -7,41 +7,40 @@ public class Projects extends TestBase {
 
 
     @Test
-    public void BookLeave() throws Exception {
+    public void NewProject() throws Exception {
 
-        Thread.sleep(48000);
-        clickButton("//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Projects')]");
+        Thread.sleep(140000);
+        clickButton(OR.getProperty("ProjectMenu"));
 
        Thread.sleep(3000);
-        clickButton("//*[@id=\"btnProjectTask\"]/div/i");  //Click on Project button
+        clickButton(OR.getProperty("NewProjectButton"));  //Click on Project button
         Thread.sleep(3000);
-       // handleAlert  ("//div[@id='NewProject']"); //Switch to Alert
-        enterText("//input[@name='Title']" , "Automation Project");
+        enterText(OR.getProperty("Title"), "Automation Project");
         Thread.sleep(1000);
-        clickButton("//*[@id=\"addNewProjectForm\"]/div/div/div/div[2]/div/div/div/div/div[1]/div/div[2]/div[2]");
+        clickButton(OR.getProperty("DropdownClient"));
         Thread.sleep(1000);
-        clickButton("//div[contains(text(),'Goldfields')]");
+        clickButton(OR.getProperty("Client"));
         Thread.sleep(1000);
-        clickButton("//*[@id=\"addNewProjectForm\"]/div/div/div/div[3]/div/div/div/div/div[1]/div/div[2]/div[2]");
+        clickButton(OR.getProperty("DropdownProjectLeader"));
         Thread.sleep(1000);
-        clickButton("//div[contains(text(),'Alex Caudron')]");
+        clickButton(OR.getProperty("ProjectLeader"));
         Thread.sleep(1000);
-        clickButton("//*[@id=\"addNewProjectForm\"]/div/div/div/div[4]/div/div/div/div/div/div/div[2]/div[2]");
+        clickButton(OR.getProperty("DropdownProjectScope"));
         Thread.sleep(1000);
-        clickButton("//div[contains(text(),'Retainer')]");
+        clickButton(OR.getProperty("ProjectScope"));
         Thread.sleep(1000);
-        clickButton("//*[@id=\"addNewProjectForm\"]/div/div/div/div[5]/div/div/div/div/div/div/div[2]/div[2]");
+        clickButton(OR.getProperty("ClickCalendarIcon"));
         Thread.sleep(1000);
-        clickButton("//td[@aria-label='Monday, December 18, 2023']");
+        clickButton(OR.getProperty("StartDate"));
         //Thread.sleep(1000);
         Thread.sleep(1000);
-        clickButton("//*[@id=\"addNewProjectForm\"]/div/div/div/div[6]/div/div/div/div/div/div/div[2]/div[2]");
+        clickButton(OR.getProperty("CalendarIcon"));
         Thread.sleep(2000);
-        clickButton("(//td[@data-value='2023/12/19'])[2]");
+        clickButton(OR.getProperty("EndDate"));
         Thread.sleep(2000);
-        clickButton("//div[@aria-label='Add Project']");
-        pressRefresh();
-        //Thread.sleep(1000);
+        clickButton(OR.getProperty("AddProjectbtn"));
+        //pressRefresh();
+        Thread.sleep(1000);
 
 
 

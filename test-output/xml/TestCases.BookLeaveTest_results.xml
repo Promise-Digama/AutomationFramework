@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="71.075">
+           time="142.520">
   <properties />
   
   
-            <testcase name="BookLeave" time="71.075" classname="TestCases.BookLeaveTest" />
+            <testcase name="SickLeave" time="142.520" classname="TestCases.BookLeaveTest" />
       
 </testsuite>

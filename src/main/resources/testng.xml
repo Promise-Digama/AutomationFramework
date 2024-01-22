@@ -14,7 +14,6 @@
             <!-- Add more classes as needed -->
         </classes>
     </test>
-
     <test name="ViewTaskTest">
         <classes>
             <class name="TestCases.ViewTaskTest"/>
@@ -23,15 +22,31 @@
     </test>
     <test name="TimeSheetTest">
         <classes>
-
             <class name="TestCases.TimeSheetTest"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+    <test name=" BookVehicleTest">
+        <classes>
+            <class name="TestCases.BookVehicleTest"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+    <test name="BookLeaveTest">
+        <classes>
+            <class name="TestCases.BookLeaveTest"/>
             <!-- Add more classes as needed -->
         </classes>
     </test>
     <test name="Projects">
         <classes>
-
             <class name="TestCases.Projects"/>
+            <!-- Add more classes as needed -->
+        </classes>
+    </test>
+    <test name="ReportsTest">
+        <classes>
+            <class name="TestCases.ReportsTest"/>
             <!-- Add more classes as needed -->
         </classes>
     </test>
@@ -41,4 +56,5 @@
             <!-- Add more classes as needed -->
         </classes>
     </test>
+
 </suite>

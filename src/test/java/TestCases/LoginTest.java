@@ -7,13 +7,16 @@ public class LoginTest extends TestBase { //All our test classes are going to ex
 
     @Test
     public void loginAsAdmin() throws Exception {
+       log.info("Starting the loginAsAdmin test...");
 
         Thread.sleep(3000);
         pressRefresh();
-        enterText("//input[@id='Email']", "promise@mineware.co.za");
-        enterText("//input[@id='Password']", "Welcome1023!");
-        clickButton("//button[contains(text(),'LOGIN')]");
-        Thread.sleep(6000);
+        enterText(OR.getProperty("UsernameInput"), "promise@mineware.co.za");
+        enterText(OR.getProperty("PasswordInput"), "Welcome1023!");
+       // Assert.assertTrue(isElementPresent(By.xpath("//button[contains(text(),'LOGIN')]")),"Input username field not found");
+        clickButton(OR.getProperty("LoginBtn"));
+        Thread.sleep(3000);
+       log.info("LoginAsAdmin test completed successfully :)");
     }
 }
 

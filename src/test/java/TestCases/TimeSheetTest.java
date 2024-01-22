@@ -8,14 +8,14 @@ public class TimeSheetTest extends TestBase {
     @Test
     public void DeleteloggedTime() throws Exception {
 
-        Thread.sleep(40000);
-       clickButton("//div[contains(@class,'d-flex flex-column text-muted')]//a[contains(text(),'Time Sheet')]");
+        Thread.sleep(45000);
+       clickButton(OR.getProperty("TimesheetMenu"));
         Thread.sleep(3000);
-        clickButton("//*[@id=\"UserTimeSheet\"]/div/div[6]/div[1]/div/div[1]/div/table/tbody/tr[2]/td[2]/div/a[2]/i");
+        clickButton(OR.getProperty("UserCalendar"));
         Thread.sleep(3000);
-        clickButton("/html/body/div[13]/div/div/div[3]/div/div[2]/div[2]/div/div");
+        clickButton(OR.getProperty("DateInput"));
         Thread.sleep(3000);
-        driver.navigate().refresh();
+       // driver.navigate().refresh();
         }
     }
 

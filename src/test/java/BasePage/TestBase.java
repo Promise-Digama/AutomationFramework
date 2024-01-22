@@ -5,15 +5,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import utilities.ExcelReader;
 import utilities.extentManager;
 
 import java.io.FileInputStream;
@@ -28,8 +27,9 @@ public class TestBase {
     public static WebDriver driver;
     public static Properties config = new Properties(); //used to store configurations
     public static Properties OR = new Properties(); //used to store object repository
-    public static Logger log = Logger.getLogger(String.valueOf(TestBase.class)); //declares a static variable log of type logger from  log4j library, which is used for logging in the test script
-    public static ExcelReader excel = new ExcelReader(".//src//main//resources//excel//testdata.xlsx"); //initializes an ExcelReader object for reading test data from an excel file.
+   // public static Logger log = Logger.getLogger("devpinoyLogger");
+   public static Logger log = Logger.getLogger(String.valueOf(TestBase.class));//declares a static variable log of type logger from  log4j library, which is used for logging in the test script
+  //  public static ExcelReader excel = new ExcelReader("C:\\Users\\Promise Digama\\IdeaProjects\\Mineware\\src\\main\\resources\\excel\\testdata.xlsx"); //initializes an ExcelReader object for reading test data from an excel file.
     public static FileInputStream fis; //used to read property files
     public static WebDriverWait wait; //used to wait for elements in the web page to load
     public static WebElement dropdown;
@@ -88,7 +88,7 @@ public class TestBase {
 
 
             //System.out.println(config.getProperty("browser"));
-            if (config.getProperty("browser").equals("chrome")) {
+            if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
 
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\executables\\chromedriver.exe");
                 WebDriverManager.chromedriver().setup();
@@ -96,18 +96,18 @@ public class TestBase {
                 log.config("Chrome Launched !!!");
 
 
-            } else if (config.getProperty("browser").equals("firefox")) {
+            } else if (config.getProperty("browser").equalsIgnoreCase("firefox")) {
 
                 /*System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\main\\resources\\executables\\gecko.exe");  */
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
 
 
-            } else if (config.getProperty("browser").equals("ie")) {
+            } else if (config.getProperty("browser").equalsIgnoreCase("edge")) {
 
-                   /* System.setProperty("webdriver.ie.driver",
-                            System.getProperty("user.dir") + "\\src\\main\\resources\\executables\\IEDriverServer.exe"); */
-                driver = new InternetExplorerDriver();
+                  /* System.setProperty("webdriver.edge.driver",
+                            System.getProperty("user.dir") + "\\src\\main\\resources\\executables\\msedgedriver.exe"); */
+                driver = new EdgeDriver();
             }
 
             driver.get(config.getProperty("testsiteurl")); //this opens the URL specified in the confagurations
@@ -302,12 +302,23 @@ public class TestBase {
 
     }
 
+    public boolean isElementPresent (By by) { //use this methods for assertions
+
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+
+
+            return false;
+        }
+    }
     @AfterSuite //this will be run after we execute all our testcases
     //Method to close everything
     public void tearDown() {
         try {
             if (driver != null) {
-               // driver.quit();
+              //  driver.quit();
                 log.config("WebDriver closed successfully.");
             }
 
